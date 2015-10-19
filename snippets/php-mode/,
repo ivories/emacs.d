@@ -1,0 +1,6 @@
+#contributor : Xerror <xerror@qq.com>
+#name : ,\n "..." => $...
+#group : definitions
+# --
+,
+   '${1:name}' => $0
