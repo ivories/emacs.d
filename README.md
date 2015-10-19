@@ -1,7 +1,7 @@
 
 ### Install
 
-    git clone https://github.com/cowframe-team/emacs.d.git ~/.emacs.d
+    git clone https://github.com/ivories/emacs.d.git ~/.emacs.d
     cd ~/.emacs.d && ./setup.sh
 
 ### to do 
@@ -12,4 +12,4 @@
 
 ### 占用资源的插件
 
-	session 不停的读文件是否可读
+    session 不停的读文件是否可读
