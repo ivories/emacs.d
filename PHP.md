@@ -8,7 +8,8 @@
     /** @var $AdminLog AdminLogModel **/
     /** @var $Admins AdminsModel **/
     或者参考
-    ![example.gif](https://raw.githubusercontent.com/xcwen/ac-php/master/images/ac-php.gif)
+    
     ctrl+o 打开PHP文件可以编写代码,按TAB可以出现类
     
+![example.gif](https://raw.githubusercontent.com/xcwen/ac-php/master/images/ac-php.gif)
     
