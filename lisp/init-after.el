@@ -12,4 +12,7 @@
 ;; (setq set-auto-buffer-save t)
 (set-input-method "chinese-py") ;; Set chinese
 
+(setq-default message-log-max nil)
+(kill-buffer "*Messages*")
+
 (provide 'init-after)

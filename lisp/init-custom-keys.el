@@ -129,7 +129,7 @@
 
 (defun find-iname-grep-dired (dir regexp)
   (interactive "DFind-name (directory): \nsFind-grep (grep regexp): ")
-  (find-dired dir (concat "-not -iwholename '*.svn*' \\) \\( -not -iwholename '*.tags*' \\) \\( -type f -exec " grep-program " " find-grep-options " -e "
+  (find-dired dir (concat "-not -iwholename '*.svn*' \\) \\( -not -iwholename '*.tags*' \\) \\( -not -iwholename '*.git*' \\) \\( -type f -exec " grep-program " " find-grep-options " -e "
     (shell-quote-argument regexp) " "
     (shell-quote-argument "{}") " "
     (shell-quote-argument ";"))
