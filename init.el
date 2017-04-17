@@ -88,6 +88,7 @@
 (require 'init-yasnippet)
 (require 'init-org)
 (require 'init-translate)
+;; (require 'init-docker)
 ;; (require 'init-file)
 ;; (require 'init-ggtags)
 ;; (require 'init-keyfreq) ;; 键盘按键收集
