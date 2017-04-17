@@ -95,6 +95,7 @@
       ("js" (shell-command (concat "/usr/bin/ws " (buffer-file-name) " " (get-buffer-line-function-name (thing-at-point 'line)) " &") ) )
       ("uml" (shell-command (concat "/usr/local/bin/plant " (buffer-file-name) " && open " (replace-regexp-in-string ".uml" ".png" buffer-file-name) )) )
       ("cpp" (shell-command (concat "/usr/local/bin/qmake && /usr/bin/make -j")))
+      ("py" (shell-command (concat "ssh -t -o StrictHostKeyChecking=no core@192.168.56.101 'docker exec -i tensorflow python " (buffer-file-name) "'" )) )
     )
    )
   )
