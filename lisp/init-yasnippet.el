@@ -6,7 +6,7 @@
 (yas-global-mode 1)
 ;;使用增强列表
 (require-package 'pos-tip)
-(setq ac-quick-help-prefer-pos-tip)
+;; (setq ac-quick-help-prefer-pos-tip)
 ;;启用默认ac设置
 (ac-config-default)
 (auto-complete-mode 1)
