@@ -40,23 +40,26 @@
 
 (global-set-key (kbd "<f1>") 'youdao-dictionary-search-at-point+)
 (global-set-key (kbd "<f2>") 'shortcut-find-definition)
-(global-set-key (kbd "<f3>") 'shortcut-run-program)
+(global-set-key (kbd "<f3>") 'shortcut-find-definition)
+(global-set-key (kbd "<f5>") 'shortcut-run-program)
 (global-set-key (kbd "<f9>") 'cf-ediff-prev-version)
 (global-set-key (kbd "<f8>") 'find-iname-grep-dired)
 (global-set-key (kbd "<f11>") 'cf-version-update)
 (global-set-key (kbd "<f12>") 'cf-version-commit)
 
-(defun shortcut-find-definition ()
+(defun shortcut-find-definition (&optional arg)
   "find definition"
   (interactive)
 
   (pcase (file-name-extension buffer-file-name)
     ("php" (ac-php-find-symbol-at-point) )
-    ("c"   (ggtags-find-definition) )
-    ("cpp" (ggtags-find-definition) )
-    ("h"   (ggtags-find-definition) )
+    ("c"   (ggtags-find-tag-dwim (thing-at-point 'word)) )
+    ("cpp" (ggtags-find-tag-dwim (thing-at-point 'word)) )
+    ("h"   (ggtags-find-tag-dwim (thing-at-point 'word)) )
   )
 )
+
+;;(require 'thingatpt)
 
 (defun qiang-comment-dwim-line (&optional arg)
     "Replacement for the comment-dwim command. If no region is selected and current line is not blank and we are not at the end of the line, then comment current line. Replaces default behaviour of comment-dwim, when it inserts comment at the end of the line."
@@ -72,6 +75,22 @@
   (string-match "//" value)
   (message (concat (match-string 0)))
   (concat (match-string 0))
+)
+
+
+(defun variable-ssh-coreos (value)
+  (concat "ssh -t -o StrictHostKeyChecking=no core@192.168.56.101 'docker exec -i " value "'")
+)
+
+(defun variable-ssh-master (value)
+  (concat "ssh -t -o StrictHostKeyChecking=no Administrator@192.168.56.1 '" value "'")
+)
+
+(defun test-test ()
+  "this is test function"
+  (interactive)
+
+  (message "test function")
 )
 
 (defun shortcut-run-program ()
@@ -94,11 +113,23 @@
       ("php" (shell-command (concat "XDEBUG_CONFIG='idekey=MyDebug' /usr/local/webserver/php/bin/php " (buffer-file-name) " &") ) )
       ("js" (shell-command (concat "/usr/bin/ws " (buffer-file-name) " " (get-buffer-line-function-name (thing-at-point 'line)) " &") ) )
       ("uml" (shell-command (concat "/usr/local/bin/plant " (buffer-file-name) " && open " (replace-regexp-in-string ".uml" ".png" buffer-file-name) )) )
-      ("cpp" (shell-command (concat "/usr/local/bin/qmake && /usr/bin/make -j")))
-      ("py" (shell-command (concat "ssh -t -o StrictHostKeyChecking=no core@192.168.56.101 'docker exec -i tensorflow python " (buffer-file-name) "'" )) )
+      ("cpp" (shell-command (variable-ssh-master (concat "cd /cygdrive/d" (file-name-directory buffer-file-name) "; cscript build.vbs")) ) )
+      ("py" (shell-command (variable-ssh-coreos (concat "tensorflow python " (buffer-file-name)) )) )
     )
    )
   )
+)
+
+;; (defun file-format-dos2unix ()
+;;   "这里的替换还是有问题，会把其它二进制文件也进行替换。DFind-name (dir): \n"
+;;   (interactive)
+;;   (shell-command "find ./ -not -path '*/\.*' -type f -print0 | xargs -0 sed -i 's/^M$//'")
+;; )
+
+(defun git-config-ignore-ctrl-m ()
+  "修改git-config忽略^M"
+  (interactive)
+  (shell-command "echo \"[core]\n\twhitespace = cr-at-eol\n\tautocrlf = input\n\tsafecrlf = true\" > ~/.gitconfig")
 )
 
 (defun shortcut-ibuffer ()

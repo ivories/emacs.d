@@ -2,6 +2,7 @@
 .emacs.desktop.lock
 .session
 .smex-items
+.ssh
 ac-comphist.dat
 custom.el
 elpa/
@@ -10,3 +11,8 @@ history
 ido.last
 recentf
 url/
+auto-save-list/
+ede-projects.el
+root/
+semanticdb/
+tramp
