@@ -39,7 +39,7 @@
 ;; (require-package 'project-local-variables)
 (require-package 'diminish)
 (require-package 'scratch)
-(require-package 'mwe-log-commands)
+;; (require-package 'mwe-log-commands)
 
 ;;----------------------------------------------------------------------------
 ;; System package
