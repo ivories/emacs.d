@@ -24,6 +24,8 @@
 ;;make the ENTER key indent next line properly
 ;;(local-set-key "\C-m" 'er/expand-region)
 
+(global-set-key (kbd "M--") 'undo-tree-redo)
+
 (global-set-key (kbd "M-1") 'previous-buffer)
 (global-set-key (kbd "M-2") 'next-buffer)
 
@@ -37,8 +39,10 @@
 (global-set-key (kbd "M-º") 'whole-line-or-region-kill-ring-save)
 (global-set-key "\M-/" 'qiang-comment-dwim-line) ;;注释功能
 
+;; (global-set-key (kbd "S-[backspace]") 'delete-backward-char)
 
-(global-set-key (kbd "<f1>") 'youdao-dictionary-search-at-point+)
+;;(global-set-key (kbd "<f1>") 'youdao-dictionary-search-at-point+)
+(global-set-key (kbd "<f1>") 'describe-mode)
 (global-set-key (kbd "<f2>") 'shortcut-find-definition)
 (global-set-key (kbd "<f3>") 'shortcut-find-definition)
 (global-set-key (kbd "<f5>") 'shortcut-run-program)

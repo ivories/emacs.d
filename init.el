@@ -89,10 +89,10 @@
 (require 'init-org)
 (require 'init-translate)
 (require 'init-ggtags)
+(require 'init-markdown)
 ;; (require 'init-docker)
 ;; (require 'init-file)
 ;; (require 'init-keyfreq) ;; 键盘按键收集
-;; (require 'init-markdown)
 ;; (require 'init-keysnail)
 ;; (require 'init-w3m)
 ;; (require 'init-proxies)
@@ -193,11 +193,22 @@
 
 (require 'init-after)
 
+;; test package
+;;(require-package 'highlight-indentation-mode)
+(require-package 'yaml-mode)
+(require-package 'smart-shift)
+;; end test package
+
+
+
+
+
 ;; (setq ac-php-debug-flag t)
 ;; (setq debug-on-error t)
 
 ;; new test at here,must check cpu time
 (require 'init-new)
+;; (require 'init-theme)
 
 (provide 'init)
 
