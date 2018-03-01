@@ -200,13 +200,12 @@
 ;; end test package
 
 
-
-
-
 ;; (setq ac-php-debug-flag t)
 ;; (setq debug-on-error t)
 
 ;; new test at here,must check cpu time
+(require 'init-mouse)
+
 (require 'init-new)
 ;; (require 'init-theme)
 
