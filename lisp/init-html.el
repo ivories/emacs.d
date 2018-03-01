@@ -1,4 +1,4 @@
-(require-package 'tidy)
+;; (require-package 'tidy)
 (add-hook 'html-mode-hook (lambda () (tidy-build-menu html-mode-map)))
 
 

@@ -13,4 +13,6 @@
         (define-key disable-mouse-mode-map
           (vector (intern k)) #'ignore)))))
 
-(disable-mouse-mode 1)
+;; (disable-mouse-mode 1)
+(require 'disable-mouse)
+(global-disable-mouse-mode)
