@@ -36,7 +36,7 @@
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
 (require-package 'wgrep)
-(require-package 'project-local-variables)
+;; (require-package 'project-local-variables)
 (require-package 'diminish)
 (require-package 'scratch)
 (require-package 'mwe-log-commands)
@@ -48,7 +48,7 @@
 (require 'init-xterm)
 (require 'init-osx-keys)
 (require 'init-gui-frames)
-(require 'init-dired)
+;; (require 'init-dired)
 (require 'init-isearch)
 (require 'init-grep)
 (require 'init-uniquify)
