@@ -111,15 +111,18 @@
 ;;----------------------------------------------------------------------------
 ;; c++ package
 ;;----------------------------------------------------------------------------
-(require 'init-cc-mode)
+;; (require 'init-cc-mode)
 
 ;;----------------------------------------------------------------------------
 ;; Html package
 ;;----------------------------------------------------------------------------
-(require 'init-html)
-(require 'init-css)
-(require-package 'htmlize)
+
+;; 2018/3/15 注释
+;; (require 'init-html)
+;; (require 'init-css)
+;; (require-package 'htmlize)
 (require 'init-web-mode)
+;; end 2018/3/15 注释
 
 ;; (require 'init-nxml)
 ;; (require 'init-textile)
@@ -204,7 +207,7 @@
 ;; (setq debug-on-error t)
 
 ;; new test at here,must check cpu time
-(require 'init-mouse)
+;; (require 'init-mouse)
 
 (require 'init-new)
 ;; (require 'init-theme)

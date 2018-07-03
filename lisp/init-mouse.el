@@ -4,7 +4,7 @@
   :lighter " 🐭"
   :keymap (make-sparse-keymap))
 
-(dolist (type '(mouse down-mouse drag-mouse
+(dolist (type '(mouse drag-mouse down-mouse
                       double-mouse triple-mouse))
   (dolist (prefix '("" C- M- S- M-S- C-M- C-S- C-M-S-))
     ;; Yes, I actually HAD to go up to 7 here.
@@ -13,7 +13,8 @@
         (define-key disable-mouse-mode-map
           (vector (intern k)) #'ignore)))))
 
- (disable-mouse-mode 1)
-;;(require 'disable-mouse)
-;;(global-disable-mouse-mode)
+(disable-mouse-mode 1)
+;; (require 'disable-mouse)
+;; (global-disable-mouse-mode)
+
 (provide 'init-mouse)
