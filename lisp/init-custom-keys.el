@@ -49,7 +49,8 @@
 (global-set-key (kbd "<f9>") 'cf-ediff-prev-version)
 (global-set-key (kbd "<f8>") 'find-iname-grep-dired)
 (global-set-key (kbd "<f11>") 'cf-version-update)
-(global-set-key (kbd "<f12>") 'cf-version-commit)
+;; (global-set-key (kbd "<f12>") 'cf-version-commit)
+(global-set-key (kbd "<f12>") 'magit-status)
 
 (defun shortcut-find-definition (&optional arg)
   "find definition"
