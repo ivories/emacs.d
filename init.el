@@ -210,7 +210,7 @@
 ;; (require 'init-mouse)
 
 (require 'init-new)
-;; (require 'init-theme)
+(require 'init-theme)
 
 (provide 'init)
 
