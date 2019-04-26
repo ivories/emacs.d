@@ -21,6 +21,26 @@
 
 (global-set-key (kbd "C-k") 'er/expand-region)
 (global-set-key (kbd "C-M-k") 'er/expand-region)
+
+(defvar custom-keys-mode-map (make-keymap) "custom-keys-mode keymap.")
+(define-minor-mode custom-keys-mode
+  "A minor mode so that my key settings override annoying major modes."
+  t " my-keys" 'custom-keys-mode-map)
+(custom-keys-mode 1)
+
+(defun my-minibuffer-setup-hook ()
+  (custom-keys-mode 0))
+(add-hook 'minibuffer-setup-hook 'my-minibuffer-setup-hook)
+
+(defadvice load (after give-my-keybindings-priority)
+  "Try to ensure that my keybindings always have priority."
+  (if (not (eq (car (car minor-mode-map-alist)) 'custom-keys-mode))
+      (let ((mykeys (assq 'custom-keys-mode minor-mode-map-alist)))
+        (assq-delete-all 'custom-keys-mode minor-mode-map-alist)
+        (add-to-list 'minor-mode-map-alist mykeys))))
+(ad-activate 'load)
+(define-key custom-keys-mode-map (kbd "C-k") 'er/expand-region)
+
 ;;make the ENTER key indent next line properly
 ;;(local-set-key "\C-m" 'er/expand-region)
 
