@@ -211,6 +211,8 @@
 
 (require 'init-new)
 (require 'init-theme)
+(require 'init-rust)
+
 
 (provide 'init)
 

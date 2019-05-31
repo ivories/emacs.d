@@ -114,26 +114,39 @@
   (when *is-a-mac*
     (define-key org-mode-map (kbd "C-c g") 'org-mac-grab-link)))
 
-(after-load 'org
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '((R . t)
-     (ditaa . t)
-     (dot . t)
-     (emacs-lisp . t)
-     (gnuplot . t)
-     (haskell . nil)
-     (latex . t)
-     (ledger . t)
-     (ocaml . nil)
-     (octave . t)
-     (python . t)
-     (ruby . t)
-     (screen . nil)
-     (sh . t)
-     (sql . nil)
-     (plantuml . t)
-     (sqlite . t))))
+;; (after-load 'org
+;;   (org-babel-do-load-languages
+;;    'org-babel-load-languages
+;;    '((R . t)
+;;      (ditaa . t)
+;;      (dot . t)
+;;      (emacs-lisp . t)
+;;      (gnuplot . t)
+;;      (haskell . nil)
+;;      (latex . t)
+;;      (ledger . t)
+;;      (ocaml . nil)
+;;      (octave . t)
+;;      (python . t)
+;;      (ruby . t)
+;;      (screen . nil)
+;;      (sh . t)
+;;      (sql . nil)
+;;      (plantuml . t)
+;;      (sqlite . t))))
 
+
+
+;; 打开org-indent mode
+;; (setq org-startup-indented t)
+
+;; ☆★○●◎◇◆□◆‰■△▲※→←↑↓〓¤°＃＆＠＼＾＿
+;; 设置bullet list
+;;(setq org-bullets-bullet-list '("〓" "■" "■" "■"))
+
+;; 调试好久的颜色，效果超赞！ todo keywords 增加背景色
+;; (setf org-todo-keyword-faces '(("TODO" . (:foreground "white" :background "#95A5A6"   :weight bold))
+;;                                 ("HAND" . (:foreground "white" :background "#2E8B57"  :weight bold))
+;;                                 ("DONE" . (:foreground "white" :background "#3498DB" :weight bold))))
 
 (provide 'init-org)
