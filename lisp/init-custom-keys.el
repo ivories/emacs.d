@@ -118,6 +118,11 @@
   (message "test function")
 )
 
+(defun run ()
+  "Run"
+  (shortcut-run-program)
+)
+
 (defun shortcut-run-program ()
   "Run program"
   (interactive)
