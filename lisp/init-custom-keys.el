@@ -140,7 +140,7 @@
    )
    ('t
     (pcase (file-name-extension buffer-file-name)
-      ("rs" (shell-command (concat "cd .. && cargo run &")) )
+      ("rs" (shell-command (concat "cd .. && cargo run --release &")) )
       ("php" (shell-command (concat "XDEBUG_CONFIG='idekey=MyDebug' /usr/local/webserver/php/bin/php " (buffer-file-name) " &") ) )
       ("js" (shell-command (concat "/usr/bin/ws " (buffer-file-name) " " (get-buffer-line-function-name (thing-at-point 'line)) " &") ) )
       ("uml" (shell-command (concat "/usr/local/bin/plant " (buffer-file-name) " && open " (replace-regexp-in-string ".uml" ".png" buffer-file-name) )) )

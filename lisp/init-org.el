@@ -1,3 +1,17 @@
+(require-package 'org-mind-map)
+
+(require 'ox)
+(require 'ox-org)
+(setq org-mind-map-engine "dot")        ;渲染的图具有明确方向性
+;; (setq org-mind-map-engine "neato")  ; 渲染的图缺乏方向性
+;; (setq org-mind-map-engine "twopi")  ; 渲染的图采用放射性布局
+;; (setq org-mind-map-engine "circo")  ; 渲染的图采用环型布局
+;; (setq org-mind-map-engine "fdp")    ; 渲染的图缺乏方向性
+;; (setq org-mind-map-engine "sfdp")   ; 渲染大型的图，图片缺乏方向性
+
+; (add-to-list 'org-mind-map-default-node-attribs '("fontname" . "wqy-zenhei"))
+
+
 (when (< emacs-major-version 24)
   (require-package 'org))
 ;; (require-package 'org-fstree)
